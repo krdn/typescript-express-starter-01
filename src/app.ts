@@ -49,14 +49,14 @@ export class App {
   }
 
   private initializeMiddlewares() {
-    this.app.use(morgan(LOG_FORMAT, { stream }));
-    this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
-    this.app.use(hpp());
-    this.app.use(helmet());
-    this.app.use(compression());
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(cookieParser());
+    this.app.use(morgan(LOG_FORMAT, { stream })); // HTTP request logger
+    this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS })); // Enable Cross Origin Resource Sharing
+    this.app.use(hpp()); // HTTP 매개변수 오염 공격
+    this.app.use(helmet()); // 다양한 HTTP 헤더를 설정하여 앱을 보호하세요
+    this.app.use(compression()); // 모든 경로 압축
+    this.app.use(express.json()); // JSON 페이로드로 수신 요청 구문 분석
+    this.app.use(express.urlencoded({ extended: true })); // Urlencoded 페이로드로 들어오는 요청을 구문 분석합니다.
+    this.app.use(cookieParser()); // 쿠키 헤더를 구문 분석하고 쿠키 이름으로 키가 지정된 객체로 req.cookies를 채웁니다.
   }
 
   private initializeRoutes(routes: Routes[]) {
