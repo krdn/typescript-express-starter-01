@@ -20,12 +20,12 @@
     "description": "마크업 & 스타일링"
   },
   {
-    "name": "🐞 bug",
+    "name": "🐛 bug",
     "color": "d73a4a",
     "description": "버그 수정"
   },
   {
-    "name": "📚 docs",
+    "name": "📝 docs",
     "color": "1D76DB",
     "description": "문서 작성 및 수정 (README.md 등)"
   },
